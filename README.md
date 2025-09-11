@@ -10,60 +10,12 @@ This repository contains experiments and analyses that examine:
 - **Meta-knowledge Testing**: Evaluating model's ability to identify user age from conversations
 - **Behavioral Analysis**: Measuring model responses across different age groups
 
-## 📁 Repository Structure
-
-```
-experimentAge/
-├── src/                          # Source code
-│   ├── probes/                   # Age probing experiments
-│   │   ├── ageLinearProbeDating.py
-│   │   └── predictAgeUsingProbes.py
-│   ├── interventions/            # Causal intervention experiments
-│   │   └── causalIntervention.py
-│   ├── analysis/                 # Analysis and evaluation scripts
-│   │   ├── modelMetaKnowledgeChecker.py
-│   │   ├── modelMetaKnowledgeDirect.py
-│   │   ├── steeredModelMetaKnowledgeChecker.py
-│   │   └── steeredModelMetaKnowledgeDirect.py
-│   ├── utils/                    # Utility functions
-│   │   ├── activationsPCA.py
-│   │   ├── cosineSimilarity.py
-│   │   ├── measureObstinanceProbabilities.py
-│   │   ├── measureObstinancy.py
-│   │   └── wordsForEachAge.py
-│   └── data_processing/          # Data preparation scripts
-│       └── createPersonaSwitchDataset.py
-├── data/                         # Data storage
-│   ├── raw/                      # Original datasets
-│   │   ├── llama_age_1/          # Conversation datasets
-│   │   └── causalityQuestions/   # Question prompts
-│   └── processed/                # Processed data
-│       ├── probe_data*           # Probe training data
-│       └── personaSwitchDS*      # Persona switching datasets
-├── results/                      # Experiment results
-│   ├── probes/                   # Probe training results
-│   │   ├── trained_probes*/      # Trained probe models
-│   │   └── *.pkl                 # Probe accuracy results
-│   └── analysis/                 # Analysis results
-│       └── *.csv                 # Accuracy and evaluation results
-├── experiments/                  # Experimental notebooks and scripts
-│   ├── notebooks/                # Jupyter notebooks
-│   │   ├── main.ipynb
-│   │   ├── main.py
-│   │   └── introToTransformerLens.py
-│   └── scripts/                  # Experimental scripts
-│       └── graphMaker/           # Visualization scripts
-├── docs/                         # Documentation
-├── pyproject.toml               # Project configuration
-├── requirements.txt             # Python dependencies
-└── README.md                    # This file
-```
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- Python 3.13+
+- Python 3.12
 - CUDA-compatible GPU (recommended)
 - Sufficient disk space for model weights and data
 
@@ -182,28 +134,7 @@ Key dependencies include:
 
 See `requirements.txt` for complete list.
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📄 License
-
-[Add your license information here]
-
 ## 🙏 Acknowledgments
 
 - [TransformerLens](https://github.com/neelnanda-io/TransformerLens) for model analysis tools
 - [Meta's Llama models](https://huggingface.co/meta-llama) for the base language model
-- Research community for probing and intervention techniques
-
-## 📚 References
-
-[Add relevant papers and references here]
-
----
-
-For questions or issues, please open an issue on GitHub or contact the maintainers.
