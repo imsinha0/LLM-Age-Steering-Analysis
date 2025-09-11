@@ -3,7 +3,7 @@ from itertools import permutations
 import os
 
 
-client = genai.Client(api_key="AIzaSyDZZq12UYpYjiORY8tmAgDhtrrz4WO5vRY")
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 ageCategories = ["child", "adolescent", "adult", "older adult"]
 
@@ -42,5 +42,3 @@ for i in range(1, 4):
     with open(f"personaSwitchDS/conversation_{first}_{second}_{i}.txt", "w") as f:
         f.write(conversation)
 '''
-#Gemini API: AIzaSyDZZq12UYpYjiORY8tmAgDhtrrz4WO5vRY
-#OpenAI API: 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
