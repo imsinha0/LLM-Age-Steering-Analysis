@@ -2,7 +2,7 @@
 
 A research project investigating age-related patterns and behaviors in large language models, specifically focusing on Llama-3.2-3B. This project explores how language models encode and can be steered based on age-related information through probing, causal interventions, and meta-knowledge analysis.
 
-## 🎯 Project Overview
+## Project Overview
 
 This repository contains experiments and analyses that examine:
 - **Age Probes**: Training linear classifiers to detect age categories from model activations
@@ -11,7 +11,7 @@ This repository contains experiments and analyses that examine:
 - **Behavioral Analysis**: Measuring model responses across different age groups
 
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -67,74 +67,8 @@ This will:
 - Generate responses for different age categories
 - Save results to `results/analysis/`
 
-#### 3. Meta-knowledge Analysis
 
-Test the model's ability to identify user age:
-
-```bash
-python src/analysis/modelMetaKnowledgeChecker.py
-```
-
-This will:
-- Load conversation data from `data/raw/llama_age_1/`
-- Test model's age identification capabilities
-- Generate accuracy reports by age group
-
-## 🔬 Key Experiments
-
-### Age Probing
-- **Purpose**: Understand how age information is encoded in model activations
-- **Method**: Train linear classifiers on hidden states from different layers
-- **Age Categories**: child, adolescent, adult, older adult
-- **Files**: `src/probes/ageLinearProbeDating.py`
-
-### Causal Interventions
-- **Purpose**: Test if we can steer model behavior using learned age directions
-- **Method**: Add probe directions to residual streams during generation
-- **Intervention Strengths**: 0.0 to 10.0
-- **Files**: `src/interventions/causalIntervention.py`
-
-### Meta-knowledge Testing
-- **Purpose**: Evaluate if models can identify user age from conversations
-- **Method**: Prompt models to include secret words based on perceived user age
-- **Evaluation**: Compare predicted vs. true age categories
-- **Files**: `src/analysis/modelMetaKnowledgeChecker.py`
-
-## 📊 Results
-
-Key findings are stored in the `results/` directory:
-
-- **Probe Accuracy**: `results/probes/probe_accuracy_results3b.pkl`
-- **Age-specific Accuracy**: `results/analysis/model_meta_knowledge_*_accuracy_by_age.csv`
-- **Intervention Responses**: `results/analysis/OUTDOORACTIVITIEScausal_intervention_responses.csv`
-
-## 🛠️ Development
-
-### Adding New Experiments
-
-1. Create new scripts in appropriate `src/` subdirectories
-2. Use the established data loading patterns
-3. Save results to `results/` with descriptive names
-4. Update this README with new functionality
-
-### Data Format
-
-- **Probe Data**: Pickled dictionaries with 'activations' and 'labels' keys
-- **Conversation Data**: Text files with age category in filename
-- **Results**: CSV files for tabular data, PKL files for complex objects
-
-## 📝 Dependencies
-
-Key dependencies include:
-- `transformer-lens`: For model analysis and hooking
-- `torch`: PyTorch for deep learning
-- `scikit-learn`: For probe training
-- `pandas`: For data manipulation
-- `numpy`: For numerical operations
-
-See `requirements.txt` for complete list.
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [TransformerLens](https://github.com/neelnanda-io/TransformerLens) for model analysis tools
 - [Meta's Llama models](https://huggingface.co/meta-llama) for the base language model
